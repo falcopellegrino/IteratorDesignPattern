@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Structural = IteratorDesignPattern.StructuralCode;
-//using Real = IteratorDesignPattern.RealWorldCode;
+using Real = IteratorDesignPattern.RealWorldCode;
 //using My = IteratorDesignPattern.MyCode;
 
 namespace IteratorDesignPattern
@@ -53,7 +53,7 @@ namespace IteratorDesignPattern
             Console.WriteLine("Iterating over collection:");
 
             object item = i.First();
-            while(item != null)
+            while (item != null)
             {
                 Console.WriteLine(item);
                 item = i.Next();
@@ -66,7 +66,35 @@ namespace IteratorDesignPattern
             #region Real world code in C#
             // Real-world code in C#
             // This real-world code demonstrates the Iterator pattern which is used to iterate over a collection of items
-            // and skip a specific number of items each iteration. 
+            // and skip a specific number of items each iteration.
+
+            // Build a collection
+            Real.Collection collection = new Real.Collection();
+            collection[0] = new Real.Item("Item 0");
+            collection[1] = new Real.Item("Item 1");
+            collection[2] = new Real.Item("Item 2");
+            collection[3] = new Real.Item("Item 3");
+            collection[4] = new Real.Item("Item 4");
+            collection[5] = new Real.Item("Item 5");
+            collection[6] = new Real.Item("Item 6");
+            collection[7] = new Real.Item("Item 7");
+            collection[8] = new Real.Item("Item 8");
+
+            // Create iterator
+            Real.Iterator iterator = collection.CreateIterator();
+
+            // Skip every other item
+            iterator.Step = 2;
+
+            Console.WriteLine("Iterating over collection");
+
+            for (Real.Item real_item = iterator.First(); !iterator.IsDone; real_item = iterator.Next())
+            {
+                Console.WriteLine(real_item.Name);
+            }
+
+            // Wait for user
+            Console.ReadKey();
             #endregion
 
             #region My code in C#

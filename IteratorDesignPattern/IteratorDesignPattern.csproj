@@ -41,8 +41,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="RealWorldCode\Collection.cs" />
+    <Compile Include="RealWorldCode\IAbstractCollection.cs" />
+    <Compile Include="RealWorldCode\Iterator.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RealWorldCode\IAbstractIterator.cs" />
+    <Compile Include="RealWorldCode\Item.cs" />
     <Compile Include="StructuralCode\Aggregate.cs" />
     <Compile Include="StructuralCode\ConcreteAggregate.cs" />
     <Compile Include="StructuralCode\ConcreteIterator.cs" />
@@ -53,7 +58,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="MyCode\" />
-    <Folder Include="RealWorldCode\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
