@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Structural = IteratorDesignPattern.StructuralCode;
 using Real = IteratorDesignPattern.RealWorldCode;
-//using My = IteratorDesignPattern.MyCode;
+using My = IteratorDesignPattern.MyCode;
 
 namespace IteratorDesignPattern
 {
@@ -98,6 +98,30 @@ namespace IteratorDesignPattern
             #endregion
 
             #region My code in C#
+            // Real-world code in C#
+            // This real-world code demonstrates the Iterator pattern which is used to iterate over a collection of items
+            // and skip a specific number of items each iteration.
+
+            // Build a collection
+            My.CollectionOfMeals pastiDellaGiornata = new My.CollectionOfMeals();
+            pastiDellaGiornata[0] = new My.Pasto("Colazione");
+            pastiDellaGiornata[1] = new My.Pasto("Spuntino della mattina");
+            pastiDellaGiornata[2] = new My.Pasto("Pranzo");
+            pastiDellaGiornata[3] = new My.Pasto("Spuntino del pomeriggio");
+            pastiDellaGiornata[4] = new My.Pasto("Cena");
+
+            // Create iterator
+            My.IteratorOfMeals iteratorDiPasti = pastiDellaGiornata.CreateIteratorOfMeals();
+            
+            Console.WriteLine("Iterating over collection");
+
+            for (My.Pasto pasto = iteratorDiPasti.First(); !iteratorDiPasti.IsDone; pasto = iteratorDiPasti.Next())
+            {
+                Console.WriteLine(pasto.TipoDiPasto);
+            }
+
+            // Wait for user
+            Console.ReadKey();
             #endregion
         }
     }

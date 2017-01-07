@@ -41,6 +41,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="MyCode\CollectionOfMeals.cs" />
+    <Compile Include="MyCode\IAbstractCollectionOfMeals.cs" />
+    <Compile Include="MyCode\IAbstractIteratorOfMeals.cs" />
+    <Compile Include="MyCode\Pasto.cs" />
+    <Compile Include="MyCode\IteratorOfMeals.cs" />
     <Compile Include="RealWorldCode\Collection.cs" />
     <Compile Include="RealWorldCode\IAbstractCollection.cs" />
     <Compile Include="RealWorldCode\Iterator.cs" />
@@ -56,9 +61,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="MyCode\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
